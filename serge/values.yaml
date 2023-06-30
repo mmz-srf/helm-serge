@@ -73,3 +73,11 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+persistence:
+  storageClass: ""
+  accessMode: ReadWriteOnce
+  weights:
+    size: 50Gi
+  datadb:
+    size: 1Gi
