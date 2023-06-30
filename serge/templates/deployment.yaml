@@ -47,6 +47,18 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: weights
+              mountPath: /usr/src/app/weights
+            - name: datadb
+              mountPath: /data/db
+      volumes:
+        - name: weights
+          persistentVolumeClaim:
+            claimName: weights
+        - name: datadb
+          persistentVolumeClaim:
+            claimName: datadb
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
