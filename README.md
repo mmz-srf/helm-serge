@@ -3,5 +3,5 @@
 
 ## installation
 ```bash
-helm install -f serge/values-dev.yaml serge-dev serge/ -n serge
+helm install -f serge/values.yaml mySerge serge/ -n serge --create-namespace
 ```
